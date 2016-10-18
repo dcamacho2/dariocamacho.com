@@ -1,0 +1,313 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* -------------------------------- 
+
+Main Components 
+
+-------------------------------- */
+
+.cd-main-nav-wrapper {
+    float: right;
+}
+
+header {
+    z-index: 3;
+    height: 100px;
+    width: 100%;
+    max-width: 1580px;
+    position: fixed;
+    background: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+@media only screen and (max-width: 590px) {
+  header {
+    height: 60px;
+  }
+  .cd-logo img {
+    margin-top: 18px !important;
+    height: 25px !important;
+  }
+  .overlay {
+    top: 60px !important;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .nav_guter_fix {
+    padding: 0 60px !important;
+  }
+}
+
+#header_shadow {
+    transition: all 0.4s linear;
+}
+
+.scroll {
+     box-shadow: 0 1px 3px rgba(0,0,0,0.1);   
+}
+
+.nav_links {
+    float: right;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.nav_links li {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 40px 12px 0;
+    margin-bottom: 0;
+}
+
+.last_li {
+  padding-right: 0 !important;
+}
+
+.cd-logo {
+    display: inline-block;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cd-logo img {
+    display: block;
+    max-width: 100%;
+    height: 30px;
+    margin-top: 39px;
+}
+
+.cd-nav-trigger {
+    display: block;
+    position: relative;
+    float: right;
+    height: 100%;
+    width: 30px;
+    /* hide text */
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+    cursor: pointer;
+}
+
+.cd-nav-trigger span {
+    /* hamburger icon created in CSS */
+    position: absolute;
+    height: 2px;
+    width: 25px;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -10px;
+    -webkit-transition: background-color 0.3s 0.3s;
+    -moz-transition: background-color 0.3s 0.3s;
+    transition: background-color 0.3s 0.3s;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.cd-nav-trigger span::before,
+.cd-nav-trigger span::after {
+    /* upper and lower lines of the menu icon */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #31c782;
+    /* Force Hardware Acceleration */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s 0.3s;
+    -moz-transition: -moz-transform 0.3s 0.3s;
+    transition: transform 0.3s 0.3s;
+}
+
+.cd-nav-trigger span::before {
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    -o-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+.cd-nav-trigger span::after {
+    -webkit-transform: translateY(4px);
+    -moz-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    -o-transform: translateY(4px);
+    transform: translateY(4px);
+}
+
+.nav-is-visible .cd-nav-trigger span::before {
+  -webkit-transform: translateY(0) rotate(-45deg);
+  -moz-transform: translateY(0) rotate(-45deg);
+  -ms-transform: translateY(0) rotate(-45deg);
+  -o-transform: translateY(0) rotate(-45deg);
+  transform: translateY(0) rotate(-45deg);
+}
+.nav-is-visible .cd-nav-trigger span::after {
+  -webkit-transform: translateY(0) rotate(45deg);
+  -moz-transform: translateY(0) rotate(45deg);
+  -ms-transform: translateY(0) rotate(45deg);
+  -o-transform: translateY(0) rotate(45deg);
+  transform: translateY(0) rotate(45deg);
+}
+
+#desktop_menu {
+    display: none;
+}
+
+#trigger-overlay {
+  display: block;
+}
+
+
+/* Overlay style */
+.overlay {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  top: 96px;
+  left: 0;
+  height: 100%;
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  overflow: hidden;
+  border: none;
+  /*background: url(../img/cross.png) no-repeat center center;*/
+  text-indent: 200%;
+  color: transparent;
+  outline: none;
+  z-index: 100;
+}
+
+/* Menu style */
+.header_nav_over {
+    margin: 0 !important;
+    text-align: center;
+    font-size: 30px;
+    color: #a6a5a5;
+    padding-top: 10% !important;
+}
+
+.header_nav_over li {
+    display: block;
+    margin: 50px 0;
+}
+
+.overlay nav {
+  background: rgba(248, 248, 249, .95);
+  height: 100%;
+  border-bottom: 1px solid rgba(166, 165, 165, .3);
+}
+
+.overlay ul {
+  list-style: none;
+  height: 100%;
+  position: relative;
+}
+
+.overlay ul li a {
+  display: block;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+/* Effects */
+.overlay-hugeinc {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-hugeinc.open {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.overlay-hugeinc nav {
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+}
+
+.overlay-hugeinc nav ul {
+  padding: 15px 0;
+  opacity: 0.4;
+  -webkit-transform: translateY(-25%) rotateX(35deg);
+  transform: translateY(-25%) rotateX(35deg);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlay-hugeinc.open nav ul {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+.overlay-hugeinc.close nav ul {
+  -webkit-transform: translateY(25%) rotateX(-35deg);
+  transform: translateY(25%) rotateX(-35deg);
+}
+
+@media only screen and (min-width: 1024px) {
+    #desktop_menu {
+        display: inline-block;
+    }
+
+    #trigger-overlay {
+      display: none;
+    }
+  
+}
+
+.menu_links {
+  color: black !important;
+}
+
